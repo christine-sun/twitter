@@ -37,6 +37,7 @@
         completion:^(Tweet *tweet, NSError *error) {
             if (tweet) {
                 NSLog(@"Successfully composed tweet");
+                [self.delegate didTweet:tweet];
                 [self dismissViewControllerAnimated:true completion:nil];
             } else {
                 NSLog(@"Error composing tweet: %@", error.localizedDescription);
