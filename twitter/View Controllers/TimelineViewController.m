@@ -14,6 +14,7 @@
 #import "UIImageView+AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ComposeViewController.h"
+#import "DateTools.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -90,8 +91,8 @@
     cell.tweet = tweet;
     cell.nameLabel.text = tweet.user.name;
     cell.screennameLabel.text = [@"@" stringByAppendingString:tweet.user.screenName];
-    cell.dateLabel.text = tweet.createdAtString;
     cell.tweetTextLabel.text = tweet.text;
+    cell.dateLabel.text = [tweet.date shortTimeAgoSinceNow];
 
     // Configure favorites button
     [cell.favoritesButton
