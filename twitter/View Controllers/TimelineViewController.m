@@ -30,7 +30,6 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.rowHeight = 200; // to delete after autolayout
     
     [self fetchTweets];
 
@@ -85,7 +84,8 @@
     NSURL *url = [NSURL URLWithString:URLString];
    // NSData *urlData = [NSData dataWithContentsOfURL:url];
     [cell.iconImageView setImageWithURL:url];
-    [cell.iconImageView.layer setCornerRadius:35];
+    [cell.iconImageView.layer setCornerRadius:28];
+    [cell.iconImageView setClipsToBounds:YES];
     
     cell.tweet = tweet;
     cell.nameLabel.text = tweet.user.name;
