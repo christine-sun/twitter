@@ -39,7 +39,8 @@
     self.nameLabel.text = tweet.user.name;
     self.screennameLabel.text = [@"@" stringByAppendingString:tweet.user.screenName];
     self.tweetTextLabel.text = tweet.text;
-    self.dateLabel.text = [tweet.date shortTimeAgoSinceNow];
+    self.timeAgoLabel.text = [tweet.date shortTimeAgoSinceNow];
+    self.dateLabel.text = tweet.createdAtString;
     
     // Configure favorites button
     [self.favoritesButton

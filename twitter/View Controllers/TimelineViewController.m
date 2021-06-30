@@ -100,9 +100,13 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     } else if ([segue.identifier isEqual:@"detailsTweet"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Tweet *tweet = self.arrayOfTweets[indexPath.row];
+        
         DetailsViewController *detailsController =
         [segue destinationViewController];
-       // detailsController.delegate = self;
+        detailsController.tweet = tweet;
     }
     
 }
