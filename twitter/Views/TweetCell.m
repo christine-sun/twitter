@@ -30,6 +30,8 @@
      forState:UIControlStateNormal];
     if (self.tweet.favorited) {
         [self.favoritesButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
+    } else {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
     }
     
     // Configure retweet button
@@ -38,31 +40,28 @@
      forState:UIControlStateNormal];
     if (self.tweet.retweeted) {
          [self.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
+    } else {
+        [self.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon"] forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)didTapFavorite:(id)sender {
     
-    // Update the local tweet model
+    // Tweet has not been favorited yet -> "like" the tweet
     if (!self.tweet.favorited) {
-        // self.tweet is NULL :(
-        
         self.tweet.favorited = YES;
-        self.tweet.favoriteCount += 1;
-    
-        // Update cell UI with new favorites count
+        self.tweet.favoriteCount++;
         [self refreshData];
-    
-        // Sent POST request to POST favorite/create endpoint
         [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
-             if (error){
-                  NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
-             }
-             else {
-                 NSLog(@"Successfully favorited the following Tweet: %@", tweet.text);
-             }
          }];
-        [self refreshData]; //need?
+        
+    // Tweet has been favorited -> "unlike" the tweet
+    } else {
+        self.tweet.favorited = NO;
+        self.tweet.favoriteCount--;
+        [self refreshData];
+        [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
+         }];
     }
 }
 
