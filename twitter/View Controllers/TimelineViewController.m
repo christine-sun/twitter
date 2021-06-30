@@ -30,7 +30,7 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.rowHeight = 200;
+    self.tableView.rowHeight = 200; // to delete after autolayout
     
     [self fetchTweets];
 
@@ -87,13 +87,19 @@
     [cell.iconImageView setImageWithURL:url];
     [cell.iconImageView.layer setCornerRadius:35];
     
+    cell.tweet = tweet;
     cell.nameLabel.text = tweet.user.name;
-    NSString *screennamePrefixString = @"@";
-    cell.screennameLabel.text = [screennamePrefixString stringByAppendingString:tweet.user.screenName];
+    cell.screennameLabel.text = [@"@" stringByAppendingString:tweet.user.screenName];
     cell.dateLabel.text = tweet.createdAtString;
     cell.tweetTextLabel.text = tweet.text;
 
-    // Configure reply button
+    // Configure favorites button
+    [cell.favoritesButton
+     setTitle:[NSString stringWithFormat:@"%d", tweet.favoriteCount]
+     forState:UIControlStateNormal];
+    if (tweet.favorited) {
+        [cell.favoritesButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
+    }
     
     // Configure retweet button
     [cell.retweetsButton
@@ -101,14 +107,6 @@
      forState:UIControlStateNormal];
     if (tweet.retweeted) {
          [cell.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
-    }
-    
-    // Configure likes button
-    [cell.likesButton
-     setTitle:[NSString stringWithFormat:@"%d", tweet.favoriteCount]
-     forState:UIControlStateNormal];
-    if (tweet.favorited) {
-        [cell.likesButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
     }
     
     return cell;

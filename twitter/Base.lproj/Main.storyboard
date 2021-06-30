@@ -129,6 +129,9 @@
                                                     <state key="normal" title="0" image="favor-icon">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapFavorite:" destination="1mk-jv-8Nx" eventType="touchUpInside" id="x3l-ip-HQo"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUB-YZ-XDG">
                                                     <rect key="frame" x="181" y="141" width="75" height="30"/>
@@ -141,8 +144,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="Vc4-ms-utl" id="7G1-zL-yKP"/>
+                                            <outlet property="favoritesButton" destination="geo-Zz-NDS" id="hkL-sE-1qX"/>
                                             <outlet property="iconImageView" destination="Sg6-9C-N87" id="oki-Sc-gIQ"/>
-                                            <outlet property="likesButton" destination="geo-Zz-NDS" id="hkL-sE-1qX"/>
                                             <outlet property="nameLabel" destination="Oeg-Ko-iB4" id="bfg-Wh-GnU"/>
                                             <outlet property="repliesButton" destination="GVM-5k-IcN" id="v1x-Jq-roI"/>
                                             <outlet property="retweetsButton" destination="TUB-YZ-XDG" id="V8q-Oa-saf"/>
