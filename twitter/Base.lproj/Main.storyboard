@@ -77,16 +77,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="121"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-9C-N87">
+                                                    <rect key="frame" x="11" y="11" width="56" height="56"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="56" id="TEn-py-DZ8"/>
+                                                        <constraint firstAttribute="width" constant="56" id="jJX-BY-FDw"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeg-Ko-iB4">
                                                     <rect key="frame" x="78" y="11" width="47" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0/00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-ms-utl">
-                                                    <rect key="frame" x="327" y="11" width="50.666666666666686" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geo-Zz-NDS">
@@ -122,18 +123,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="@screenname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBB-aY-9OU">
-                                                    <rect key="frame" x="136" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="130" y="11" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sg6-9C-N87">
-                                                    <rect key="frame" x="11" y="11" width="56" height="56"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="56" id="TEn-py-DZ8"/>
-                                                        <constraint firstAttribute="width" constant="56" id="jJX-BY-FDw"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc4-ms-utl">
+                                                    <rect key="frame" x="356" y="11" width="17.333333333333314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Oeg-Ko-iB4" firstAttribute="leading" secondItem="Sg6-9C-N87" secondAttribute="trailing" constant="11" id="1Wm-g8-EUc"/>
@@ -145,14 +145,15 @@
                                                 <constraint firstItem="geo-Zz-NDS" firstAttribute="leading" secondItem="TUB-YZ-XDG" secondAttribute="trailing" constant="13" id="dFM-bI-Qll"/>
                                                 <constraint firstItem="hWA-xZ-gpL" firstAttribute="top" secondItem="Oeg-Ko-iB4" secondAttribute="bottom" constant="5" id="di0-TF-NGZ"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Sg6-9C-N87" secondAttribute="bottom" constant="10" id="gZV-Ff-MsT"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vc4-ms-utl" secondAttribute="trailing" constant="12.333333333333314" id="mJ9-XX-OuT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vc4-ms-utl" secondAttribute="trailing" constant="16.666666666666686" id="mJ9-XX-OuT"/>
                                                 <constraint firstItem="Oeg-Ko-iB4" firstAttribute="top" secondItem="QCj-Dq-fgI" secondAttribute="topMargin" id="oSX-jV-G7A"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="geo-Zz-NDS" secondAttribute="bottom" constant="10" id="olH-I6-xm6"/>
                                                 <constraint firstItem="Vc4-ms-utl" firstAttribute="firstBaseline" secondItem="wBB-aY-9OU" secondAttribute="firstBaseline" id="q9a-Ln-Qsb"/>
                                                 <constraint firstItem="hWA-xZ-gpL" firstAttribute="leading" secondItem="Sg6-9C-N87" secondAttribute="trailing" constant="11" id="qyR-r8-JD0"/>
+                                                <constraint firstItem="Vc4-ms-utl" firstAttribute="firstBaseline" secondItem="wBB-aY-9OU" secondAttribute="firstBaseline" id="r5d-Nb-G6p"/>
                                                 <constraint firstItem="wBB-aY-9OU" firstAttribute="firstBaseline" secondItem="Oeg-Ko-iB4" secondAttribute="firstBaseline" id="tKZ-kp-nIb"/>
                                                 <constraint firstAttribute="trailing" secondItem="hWA-xZ-gpL" secondAttribute="trailing" constant="12" id="tdg-kj-wdQ"/>
-                                                <constraint firstItem="wBB-aY-9OU" firstAttribute="leading" secondItem="Oeg-Ko-iB4" secondAttribute="trailing" constant="11" id="uVR-G0-pb0"/>
+                                                <constraint firstItem="wBB-aY-9OU" firstAttribute="leading" secondItem="Oeg-Ko-iB4" secondAttribute="trailing" constant="5" id="uVR-G0-pb0"/>
                                                 <constraint firstItem="geo-Zz-NDS" firstAttribute="top" secondItem="hWA-xZ-gpL" secondAttribute="bottom" constant="10" id="xhZ-TL-Qjw"/>
                                             </constraints>
                                         </tableViewCellContentView>
