@@ -24,6 +24,7 @@
 }
 
 - (void)refreshData {
+    
     // Configure favorites button
     [self.favoritesButton
      setTitle:[NSString stringWithFormat:@"%d", self.tweet.favoriteCount]
@@ -51,7 +52,6 @@
     if (!self.tweet.favorited) {
         self.tweet.favorited = YES;
         self.tweet.favoriteCount++;
-        [self refreshData];
         [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
          }];
         
@@ -59,10 +59,31 @@
     } else {
         self.tweet.favorited = NO;
         self.tweet.favoriteCount--;
-        [self refreshData];
         [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
          }];
     }
+    
+    [self refreshData];
+}
+
+- (IBAction)didTapRetweet:(id)sender {
+    
+    // Tweet has not been retweeted yet -> "retweet" the tweet
+    if (!self.tweet.retweeted) {
+        self.tweet.retweeted = YES;
+        self.tweet.retweetCount++;
+        [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
+         }];
+        
+    // Tweet has been retweeted -> "unretweet" the tweet
+    } else {
+        self.tweet.retweeted = NO;
+        self.tweet.retweetCount--;
+        [[APIManager shared] unretweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
+         }];
+    }
+    
+    [self refreshData];
 }
 
 @end
