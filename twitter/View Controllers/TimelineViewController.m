@@ -14,6 +14,7 @@
 #import "Tweet.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -93,9 +94,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
+// ([[segue identifier] isEqualToString:@"detailViewSegue"])
+    if ([segue.identifier isEqual:@"composeTweet"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    } else if ([segue.identifier isEqual:@"detailsTweet"]) {
+        DetailsViewController *detailsController =
+        [segue destinationViewController];
+       // detailsController.delegate = self;
+    }
+    
 }
 
 @end
