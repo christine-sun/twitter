@@ -11,10 +11,9 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "TweetCell.h"
-#import "UIImageView+AFNetworking.h"
+#import "Tweet.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ComposeViewController.h"
-#import "DateTools.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -40,8 +39,8 @@
     
 }
 
+// Get timeline
 - (void)fetchTweets {
-    // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             NSLog(@"😎😎😎 Successfully loaded home timeline");
@@ -78,38 +77,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-    Tweet *tweet = self.arrayOfTweets[indexPath.row];
-    
-    // Set the user's profile image
-    NSString *URLString = tweet.user.profilePicture;
-    NSURL *url = [NSURL URLWithString:URLString];
-   // NSData *urlData = [NSData dataWithContentsOfURL:url];
-    [cell.iconImageView setImageWithURL:url];
-    [cell.iconImageView.layer setCornerRadius:28];
-    [cell.iconImageView setClipsToBounds:YES];
-    
-    cell.tweet = tweet;
-    cell.nameLabel.text = tweet.user.name;
-    cell.screennameLabel.text = [@"@" stringByAppendingString:tweet.user.screenName];
-    cell.tweetTextLabel.text = tweet.text;
-    cell.dateLabel.text = [tweet.date shortTimeAgoSinceNow];
-
-    // Configure favorites button
-    [cell.favoritesButton
-     setTitle:[NSString stringWithFormat:@"%d", tweet.favoriteCount]
-     forState:UIControlStateNormal];
-    if (tweet.favorited) {
-        [cell.favoritesButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
-    }
-    
-    // Configure retweet button
-    [cell.retweetsButton
-     setTitle:[NSString stringWithFormat:@"%d", tweet.retweetCount]
-     forState:UIControlStateNormal];
-    if (tweet.retweeted) {
-         [cell.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
-    }
-    
+    cell.tweet = self.arrayOfTweets[indexPath.row];
+    [cell refreshData:cell.tweet];
     return cell;
 }
 

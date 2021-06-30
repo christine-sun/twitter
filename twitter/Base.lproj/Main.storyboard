@@ -185,7 +185,7 @@
                                 <action selector="onLogOutButtonClick:" destination="Lbl-k5-U4i" id="fud-sl-9jU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="XEI-QO-vBr">
+                        <barButtonItem key="rightBarButtonItem" image="edit-icon" id="XEI-QO-vBr">
                             <connections>
                                 <segue destination="YQ0-kP-NEA" kind="presentation" id="GPa-bz-P67"/>
                             </connections>
@@ -278,6 +278,7 @@
     </scenes>
     <resources>
         <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
+        <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">

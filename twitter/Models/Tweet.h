@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSDate *date; // Date this tweet was published
 
 // For Retweets
-@property (nonatomic, strong) User *retweetedByUser;  // user who retweeted if tweet is retweet
+@property (nonatomic, strong) User *retweetedByUser;  // User who retweeted if tweet is retweet
 
 // MARK: Methods
 

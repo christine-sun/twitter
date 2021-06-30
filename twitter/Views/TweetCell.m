@@ -9,6 +9,9 @@
 #import "TweetCell.h"
 #import "APIManager.h"
 #import "AppDelegate.h"
+#import "UIImageView+AFNetworking.h"
+#import "DateTools.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation TweetCell
 
@@ -23,7 +26,20 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshData {
+- (void)refreshData:(Tweet *)tweet {
+    
+    // Set the user's profile image
+    NSString *URLString = tweet.user.profilePicture;
+    NSURL *url = [NSURL URLWithString:URLString];
+    [self.iconImageView setImageWithURL:url];
+    [self.iconImageView.layer setCornerRadius:28];
+    [self.iconImageView setClipsToBounds:YES];
+    
+    self.tweet = tweet;
+    self.nameLabel.text = tweet.user.name;
+    self.screennameLabel.text = [@"@" stringByAppendingString:tweet.user.screenName];
+    self.tweetTextLabel.text = tweet.text;
+    self.dateLabel.text = [tweet.date shortTimeAgoSinceNow];
     
     // Configure favorites button
     [self.favoritesButton
@@ -63,7 +79,7 @@
          }];
     }
     
-    [self refreshData];
+    [self refreshData:self.tweet];
 }
 
 - (IBAction)didTapRetweet:(id)sender {
@@ -83,7 +99,7 @@
          }];
     }
     
-    [self refreshData];
+    [self refreshData:self.tweet];
 }
 
 @end
