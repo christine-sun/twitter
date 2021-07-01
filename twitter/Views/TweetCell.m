@@ -33,6 +33,7 @@
     NSURL *url = [NSURL URLWithString:URLString];
     [self.iconImageView setImageWithURL:url];
     [self.iconImageView.layer setCornerRadius:28];
+    
     [self.iconImageView setClipsToBounds:YES];
     
     self.tweet = tweet;
