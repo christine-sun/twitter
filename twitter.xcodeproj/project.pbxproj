@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		557D7B17F5D2B5715B705AA9 /* libPods-twitter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D6142D6F34C1AE98EE4951 /* libPods-twitter.a */; };
 		5FBC003B268D0EA8007FCA55 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBC003A268D0EA8007FCA55 /* DetailsViewController.m */; };
+		5FBC007F268E3BD9007FCA55 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBC007E268E3BD9007FCA55 /* ProfileViewController.m */; };
 		5FBCFFE5268A5679007FCA55 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FBCFFE4268A5679007FCA55 /* Keys.plist */; };
 		5FBCFFE8268A7814007FCA55 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCFFE7268A7814007FCA55 /* User.m */; };
 		5FBCFFEB268A7B15007FCA55 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBCFFEA268A7B15007FCA55 /* Tweet.m */; };
@@ -30,6 +31,8 @@
 		43D6142D6F34C1AE98EE4951 /* libPods-twitter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-twitter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBC0039268D0EA8007FCA55 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		5FBC003A268D0EA8007FCA55 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		5FBC007D268E3BD9007FCA55 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5FBC007E268E3BD9007FCA55 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		5FBCFFE4268A5679007FCA55 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		5FBCFFE6268A7814007FCA55 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		5FBCFFE7268A7814007FCA55 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				5FBCFFF3268BB86F007FCA55 /* ComposeViewController.m */,
 				5FBC0039268D0EA8007FCA55 /* DetailsViewController.h */,
 				5FBC003A268D0EA8007FCA55 /* DetailsViewController.m */,
+				5FBC007D268E3BD9007FCA55 /* ProfileViewController.h */,
+				5FBC007E268E3BD9007FCA55 /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
 				6AD278DA20BC4B950085BC29 /* AppDelegate.m in Sources */,
 				6AD278F620BCB68B0085BC29 /* APIManager.m in Sources */,
+				5FBC007F268E3BD9007FCA55 /* ProfileViewController.m in Sources */,
 				6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

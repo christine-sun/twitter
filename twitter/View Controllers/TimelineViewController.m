@@ -15,6 +15,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ComposeViewController.h"
 #import "DetailsViewController.h"
+#import "ProfileViewController.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -80,6 +81,7 @@
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     cell.tweet = self.arrayOfTweets[indexPath.row];
     [cell refreshData:cell.tweet];
+    cell.delegate = self;
     return cell;
 }
 
@@ -88,17 +90,22 @@
     [self.tableView reloadData];
 }
 
+- (void)tweetCell:(TweetCell *)tweetCell didTap:(User *)user {
+    // Perform segue to profile view controller
+    [self performSegueWithIdentifier:@"profileSegue" sender:user];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-// ([[segue identifier] isEqualToString:@"detailViewSegue"])
     if ([segue.identifier isEqual:@"composeTweet"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
+        
     } else if ([segue.identifier isEqual:@"detailsTweet"]) {
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
@@ -107,6 +114,10 @@
         DetailsViewController *detailsController =
         [segue destinationViewController];
         detailsController.tweet = tweet;
+        
+    } else if ([segue.identifier isEqual:@"profileSegue"]) {
+        ProfileViewController *profileController = [segue destinationViewController];
+        profileController.user = sender;
     }
     
 }

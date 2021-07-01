@@ -12,12 +12,17 @@
 #import "UIImageView+AFNetworking.h"
 #import "DateTools.h"
 #import <QuartzCore/QuartzCore.h>
+#import "User.h"
 
 @implementation TweetCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    // Attach gesture recognizer to icon image view
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
+    [self.iconImageView addGestureRecognizer:profileTapGestureRecognizer];
+    [self.iconImageView setUserInteractionEnabled:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -102,6 +107,11 @@
     }
     
     [self refreshData:self.tweet];
+}
+
+// Navigate to tapped user's profile
+- (void) didTapUserProfile:(UITapGestureRecognizer *)sender {
+    [self.delegate tweetCell:self didTap:self.tweet.user];
 }
 
 @end
