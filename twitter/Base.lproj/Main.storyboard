@@ -97,7 +97,7 @@
                                                         <constraint firstAttribute="width" constant="79" id="5L2-xe-v3c"/>
                                                         <constraint firstAttribute="height" constant="30" id="SiP-Ly-BNZ"/>
                                                     </constraints>
-                                                    <state key="normal" title="0" image="favor-icon">
+                                                    <state key="normal" title="0" image="favor-icon-transparent">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -110,7 +110,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="OyN-Ij-5q5"/>
                                                         <constraint firstAttribute="width" constant="75" id="bN5-oW-hzh"/>
                                                     </constraints>
-                                                    <state key="normal" title="0" image="retweet-icon">
+                                                    <state key="normal" title="0" image="retweet-icon-transparent">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -247,7 +247,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKI-Kq-6aJ">
                                                     <rect key="frame" x="26" y="134" width="38" height="30"/>
-                                                    <state key="normal" title="1" image="retweet-icon">
+                                                    <state key="normal" title="1" image="retweet-icon-transparent">
                                                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -262,7 +262,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-4d-j3H">
                                                     <rect key="frame" x="81" y="134" width="38" height="30"/>
-                                                    <state key="normal" title="1" image="favor-icon">
+                                                    <state key="normal" title="1" image="favor-icon-transparent">
                                                         <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
@@ -418,8 +418,8 @@
     <resources>
         <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
         <image name="edit-icon" width="30" height="27"/>
-        <image name="favor-icon" width="30" height="30"/>
-        <image name="retweet-icon" width="30" height="30"/>
+        <image name="favor-icon-transparent" width="30" height="30"/>
+        <image name="retweet-icon-transparent" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

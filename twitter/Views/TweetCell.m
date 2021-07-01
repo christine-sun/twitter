@@ -48,9 +48,9 @@
      setTitle:[NSString stringWithFormat:@"%d", self.tweet.favoriteCount]
      forState:UIControlStateNormal];
     if (self.tweet.favorited) {
-        [self.favoritesButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
+        [self.favoritesButton setImage:[UIImage imageNamed:@"favor-icon-red-transparent"] forState:UIControlStateNormal];
     } else {
-        [self.favoritesButton setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
+        [self.favoritesButton setImage:[UIImage imageNamed:@"favor-icon-transparent"] forState:UIControlStateNormal];
     }
     
     // Configure retweet button
@@ -58,9 +58,9 @@
      setTitle:[NSString stringWithFormat:@"%d", self.tweet.retweetCount]
      forState:UIControlStateNormal];
     if (self.tweet.retweeted) {
-         [self.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
+         [self.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon-green-transparent"] forState:UIControlStateNormal];
     } else {
-        [self.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon"] forState:UIControlStateNormal];
+        [self.retweetsButton setImage:[UIImage imageNamed:@"retweet-icon-transparent"] forState:UIControlStateNormal];
     }
 }
 
