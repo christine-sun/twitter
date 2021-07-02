@@ -2,7 +2,7 @@
 
 **Tweeta** is a twitter clone app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent: **26** hours spent in total
 
 ## User Stories
 
@@ -22,13 +22,13 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] User can view their profile in a *profile tab*
+- [ x] User can view their profile in a *profile tab*
   - Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
   - [ ] Profile view should include that user's timeline
 - [x ] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
 - [ ] Links in tweets are clickable.
-- [ ] User can tap the profile image in any tweet to see another user's profile
+- [ x] User can tap the profile image in any tweet to see another user's profile
   - Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
@@ -46,20 +46,24 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How can this code best be refactored such that data encapsulation is optimized?
+2. What new insights could you provide with the Twitter API that aren't necessarily on the actual app?
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [Kap](https://getkap.co/).
+![](https://i.imgur.com/YBEIBrY.gif)
+![](https://i.imgur.com/G0oTLTG.gif)
+![](https://i.imgur.com/OUADcW8.gif)
+![](https://i.imgur.com/sAaXzv8.gif)
+![](https://i.imgur.com/x70IBHS.gif)
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+Learning how to create custom networks calls with the API and API Manager was challenging but rewarding.
 
 ## Credits
 
@@ -69,7 +73,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2021 Christine Sun
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

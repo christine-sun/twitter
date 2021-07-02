@@ -7,8 +7,19 @@
 //
 
 #import "ProfileViewController.h"
+#import "UIImageView+AFNetworking.h"
+#import "TweetCell.h"
+#import "APIManager.h"
+#import "AppDelegate.h"
 
-@interface ProfileViewController ()
+@interface ProfileViewController () 
+
+@property (weak, nonatomic) IBOutlet UIImageView *bannerView;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *screennameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followersLabel;
 
 @end
 
@@ -16,9 +27,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    NSLog(@"%@", self.user.name);
+    NSURL *bannerURL = [NSURL URLWithString:self.user.bannerUrl];
+    [self.bannerView setImageWithURL:bannerURL];
+    
+    NSURL *iconURL = [NSURL URLWithString:self.user.profilePicture];
+    [self.iconImageView setImageWithURL:iconURL];
+    [self.iconImageView.layer setCornerRadius:28];
+    [self.iconImageView.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+    
+    self.nameLabel.text = self.user.name;
+    self.screennameLabel.text = [@"@" stringByAppendingString:self.user.screenName];
+    self.descriptionLabel.text = self.user.accountDescription;
+    NSString *followersString = [NSString stringWithFormat:@"%d", self.user.followersCount];
+    self.followersLabel.text = [followersString stringByAppendingString:@" followers"];
 }
 
 /*

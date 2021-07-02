@@ -8,6 +8,7 @@
 
 #import "APIManager.h"
 #import "Tweet.h"
+#import "User.h"
 
 static NSString * const baseURLString = @"https://api.twitter.com";
 
@@ -110,7 +111,6 @@ static NSString * const baseURLString = @"https://api.twitter.com";
     NSString *urlString = @"1.1/statuses/retweet/";
     urlString = [urlString stringByAppendingString:tweet.idStr];
     urlString = [urlString stringByAppendingString:@".json"];
-    NSLog(@"%@", urlString);
     NSDictionary *parameters = @{@"id": tweet.idStr};
     [self POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable tweetDictionary) {
         Tweet *tweet = [[Tweet alloc]initWithDictionary:tweetDictionary];
