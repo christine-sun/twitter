@@ -22,14 +22,14 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [x] User can view their profile in a *profile tab*
+- [] User can view their profile in a *profile tab*
   - Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
   - [ ] Profile view should include that user's timeline
 - [x] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
 - [ ] Links in tweets are clickable.
 - [x] User can tap the profile image in any tweet to see another user's profile
-  - Contains the user header view: picture and tagline
+  - [x]Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 - [ ] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 280) (**1 point**)
@@ -54,6 +54,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 Here's a walkthrough of implemented user stories:
 
 ![](https://i.imgur.com/YBEIBrY.gif)
+![](https://i.imgur.com/c2eZ9LX.gif)
 ![](https://i.imgur.com/G0oTLTG.gif)
 ![](https://i.imgur.com/OUADcW8.gif)
 ![](https://i.imgur.com/sAaXzv8.gif)
