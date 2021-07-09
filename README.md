@@ -2,7 +2,7 @@
 
 **Tweeta** is a twitter clone app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **26** hours spent in total
+Time spent: **16** hours spent in total
 
 ## User Stories
 
