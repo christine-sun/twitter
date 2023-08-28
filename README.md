@@ -1,4 +1,4 @@
-# Project 3 - *Twitter*
+# Twitter
 
 A twitter clone app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
@@ -33,8 +33,6 @@ Here's a walkthrough of implemented user stories:
 ![](https://i.imgur.com/x70IBHS.gif)
 
 ## Credits
-
-List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
